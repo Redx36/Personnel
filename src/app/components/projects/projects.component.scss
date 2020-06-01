@@ -1,0 +1,31 @@
+.header {
+  > p {
+    text-align: center;
+    line-height: 1.6em;
+    margin-bottom: 4vh;
+    margin-top: 5vh;
+    position: relative;
+  }
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  > * {
+    width: 33%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .projects > * {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .projects > * {
+    width: 100%;
+  }
+}

@@ -1,0 +1,59 @@
+.background-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.background-first {
+  background: #a6930e linear-gradient(145deg, #d5bb81, #412e03);
+
+  width: 220vw;
+  height: 60vh;
+
+  position: absolute;
+  top: 0;
+  left: -120vw;
+  z-index: 20;
+
+  transform: translateZ(1px) skewY(9deg);
+  transform-origin: 100%;
+
+  box-shadow: 0 7px 38px -12px rgba(0, 0, 0, 0.75);
+  transition: all 0.2s ease-out;
+}
+
+.background-second {
+  background: #122d33 linear-gradient(145deg, #182d33, #3396eb);
+
+  width: 100vw;
+  height: 100vh;
+
+  position: absolute;
+  bottom: 0;
+  left: 21vw;
+  z-index: 10;
+
+  transform: skewX(-52deg);
+  transform-origin: 0 100%;
+
+  box-shadow: 0 7px 38px -12px rgba(0, 0, 0, 0.75);
+}
+
+.background-third {
+  background: #fff;
+
+  width: 100vw;
+  height: 100vh;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+
+  transform: skewY(-38deg);
+  transform-origin: 35vh 100%;
+}

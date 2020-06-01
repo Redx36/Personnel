@@ -1,0 +1,17 @@
+<div class="content" [@fadeIn]="animationState">
+  <div class="photo">
+    <img src="assets/profile.svg" alt="">
+  </div>
+  <div class="text">
+    <div>
+      <h1>Jared ALIDJINOU</h1>
+      <h2>Web Developer</h2>
+    </div>
+  </div>
+  <div class="start">
+    <button (click)="getStartedAction()">Découvrez-moi</button>
+  </div>
+</div>
+
+<ngx-json-ld [json]="schema" ></ngx-json-ld>
+

@@ -1,0 +1,168 @@
+<app-nav></app-nav>
+<div class="content" [@fadeIn]="headerState">
+
+    <mat-card-title  class="header">Informations générales</mat-card-title>
+    <mat-list>
+        <mat-list-item *ngIf="contactItems !== undefined && contactItems.city !== undefined && contactItems.city !== ''">
+          <mat-icon mat-list-icon>place</mat-icon>
+          <h4 mat-line>{{contactItems.city}}</h4>
+        </mat-list-item>
+        <mat-list-item *ngIf="contactItems !== undefined && contactItems.mail !== undefined && contactItems.mail !== ''">
+          <mat-icon mat-list-icon>email</mat-icon>
+          <p mat-line>
+            <a mat-button color="default" href="mailto:{{contactItems.mail}}" *ngIf="contactItems.mail">{{contactItems.mail}}</a>
+<!--            <span *ngIf="contactItems.mail">{{contactItems.mail}}</span>-->
+          </p>
+        </mat-list-item>
+        <mat-list-item *ngIf="contactItems !== undefined && contactItems.phone !== undefined && contactItems.phone !== ''">
+          <mat-icon mat-list-icon>phone</mat-icon>
+          <h4 mat-line>Téléphone</h4>
+          <p mat-line>{{contactItems.phone}}</p>
+        </mat-list-item>
+        <mat-list-item *ngIf="contactItems !== undefined && contactItems.skype !== undefined && contactItems.skype !== ''">
+          <i mat-list-icon class="icon-skype"></i>
+          <h4 mat-line>Skype</h4>
+          <p mat-line>{{contactItems.skype}}</p>
+        </mat-list-item>
+    </mat-list>
+
+    <br><br>
+    <mat-card-title>Profiles sur le web</mat-card-title>
+    <mat-list>
+        <a mat-button matTooltip="Voir le profil" matTooltipPosition="above" color="primary" class="profile-link" href="{{contactItems.linkedin}}" target="_blank" *ngIf="contactItems !== undefined && contactItems.linkedin !== undefined && contactItems.linkedin !== ''">
+          <i mat-list-icon class="link-icon icon-linkedin"></i>
+          LinkedIn
+        </a>
+        <a mat-button matTooltip="Voir le profil" matTooltipPosition="above" color="primary" class="profile-link" href="{{contactItems.github}}" target="_blank" *ngIf="contactItems !== undefined && contactItems.github !== undefined && contactItems.github !== ''">
+          <i mat-list-icon class="link-icon icon-github"></i>
+          GitHub
+        </a>
+        <a mat-button matTooltip="Voir le profil" matTooltipPosition="above" color="primary" class="profile-link" href="{{contactItems.stackoverflow}}" target="_blank" *ngIf="contactItems !== undefined && contactItems.stackoverflow !== undefined && contactItems.stackoverflow !== ''">
+          <i mat-list-icon class="link-icon icon-stackoverflow"></i>
+          StackOverflow
+        </a>
+        <a mat-button matTooltip="Voir le profil" matTooltipPosition="above" color="primary" class="profile-link" href="{{contactItems.facebook}}" target="_blank" *ngIf="contactItems !== undefined && contactItems.facebook !== undefined && contactItems.facebook !== ''">
+          <i mat-list-icon class="link-icon icon-facebook"></i>
+          Facebook
+        </a>
+        <a mat-button matTooltip="Voir le profil" matTooltipPosition="above" color="primary" class="profile-link" href="{{contactItems.twitter}}" target="_blank" *ngIf="contactItems !== undefined && contactItems.twitter !== undefined && contactItems.twitter !== ''">
+          <i mat-list-icon class="link-icon icon-twitter"></i>
+          Twitter
+        </a>
+        <a mat-button matTooltip="Voir le profil" matTooltipPosition="above" color="primary" class="profile-link" href="{{contactItems.instagram}}" target="_blank" *ngIf="contactItems !== undefined && contactItems.instagram !== undefined && contactItems.instagram !== ''">
+          <i mat-list-icon class="link-icon icon-instagram"></i>
+          Instagram
+        </a>
+        <span class="other-links" *ngIf="contactItems !== undefined && contactItems.other !== undefined && contactItems.other !== [] && contactItems.other.length > 0">
+        <br><br>
+        <mat-divider></mat-divider>
+        <br>
+        <a mat-button matTooltip="Voir le profil" matTooltipPosition="above" color="primary" class="profile-link" href="{{item.link}}" target="_blank" *ngFor="let item of contactItems.other">
+          <i mat-list-icon class="link-icon {{item.icon | lowercase}}" *ngIf="item.icon !== undefined && item.icon !== '' && item.icon.startsWith('icon-')"></i>
+          <mat-icon *ngIf="item.icon !== undefined && item.icon !== '' && ! item.icon.startsWith('icon-')">{{item.icon | lowercase}}</mat-icon>
+          <mat-icon *ngIf="item.icon === undefined && item.icon === ''">link</mat-icon>
+          {{item.title}}
+        </a>
+      </span>
+    </mat-list>
+
+
+  <div class="header">
+    <h1> <strong>Des Questions ou un besoin ?</strong></h1>
+  </div>
+  <br/>
+
+  <mat-grid-list cols="1" *ngIf="windowWidth < 800">
+
+    <mat-grid-tile>
+      <img src="../../../assets/img/letter.svg">
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <ng-form [formGroup]="contactForm">
+
+          <mat-form-field appearance="outline">
+            <mat-label>Nom</mat-label>
+            <input matInput name="contactName" formControlName="contactName" required>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="contactForm.controls.contactName.invalid">{{getContactError()}}</mat-error>
+          </mat-form-field>
+        <br/>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput name="contactEmail" formControlName="contactEmail" required>
+          <mat-icon matSuffix>alternate_email</mat-icon>
+          <mat-error *ngIf="contactForm.controls.contactEmail.invalid">{{getContactError()}}</mat-error>
+        </mat-form-field>
+        <br/>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Telephone</mat-label>
+          <input matInput name="contactPhone" formControlName="contactPhone">
+          <mat-icon matSuffix>local_phone</mat-icon>
+        </mat-form-field>
+        <br/>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Votre message</mat-label>
+          <textarea matInput name="contactMessage" formControlName="contactMessage" required></textarea>
+          <mat-error *ngIf="contactForm.controls.contactMessage.invalid">{{getContactError()}}</mat-error>
+        </mat-form-field>
+        <br>
+
+        <button class="send" mat-raised-button (click)="sendMessage()" [disabled]="disabled">Envoyer</button>
+
+      </ng-form>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+  <mat-grid-list cols="2" *ngIf="windowWidth >= 800">
+
+    <mat-grid-tile>
+      <img src="../../../assets/img/letter.svg">
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <ng-form [formGroup]="contactForm">
+
+          <mat-form-field appearance="outline">
+            <mat-label>Nom</mat-label>
+            <input matInput name="contactName" formControlName="contactName" required>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="contactForm.controls.contactName.invalid">{{getContactError()}}</mat-error>
+          </mat-form-field>
+        <br/>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput name="contactEmail" formControlName="contactEmail" required>
+          <mat-icon matSuffix>alternate_email</mat-icon>
+          <mat-error *ngIf="contactForm.controls.contactEmail.invalid">{{getContactError()}}</mat-error>
+        </mat-form-field>
+        <br/>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Telephone</mat-label>
+          <input matInput name="contactPhone" formControlName="contactPhone">
+          <mat-icon matSuffix>local_phone</mat-icon>
+        </mat-form-field>
+        <br/>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Votre message</mat-label>
+          <textarea matInput name="contactMessage" formControlName="contactMessage" required></textarea>
+          <mat-error *ngIf="contactForm.controls.contactMessage.invalid">{{getContactError()}}</mat-error>
+        </mat-form-field>
+        <br/>
+
+        <button class="send" mat-raised-button (click)="sendMessage()" [disabled]="disabled">Envoyer</button>
+
+      </ng-form>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+
+</div>

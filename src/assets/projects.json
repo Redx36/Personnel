@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Ahimin",
+    "thumbnail": "assets/projects/ahimin.png",
+    "caption": "Wordpress/Woocommerce, Custom theme",
+    "url": "ahimin",
+    "content": "<p>Site E-commerce à rayons multiples type amazon, Ahimin a pour vision de s'implanter en afique de l'ouest afin de se positionner comme leader de la distribution de produits issus du e-commerce. </p><p>Sa roadmap consiste à distribuer les internautes de cette région en produits de nécessités pour bébés et enfant en bas âge.</p><p>Ainsi, les autres rayons pourront être disponibles assez rapidement une fois les étapes de la roadmap atteintes.</p>",
+    "links": [
+      {
+        "label": "Site",
+        "url": "http://ahimin.fr"
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/projects/ahimin/home.PNG",
+        "caption": "Page d'accueil"
+      },
+      {
+        "path": "assets/projects/ahimin/shop.PNG",
+        "caption": "Boutique"
+      }
+    ]
+  },
+  {
+    "name": "APN",
+    "thumbnail": "assets/projects/apn.png",
+    "caption": "Drupal, Open Social",
+    "url": "apn",
+    "content": "<p>Apn pour African Professionnal Network, est un mixte à mi chemin entre un réseau professionnel type LinkedIn et un réseau social classique.</p><p>En effet, avec la possibilité de publier des articles, créer des événements, ajouter des membres à des groupes privés ou libre d'accés, ce réseau vise à accéder aisément à des compétences nécessaire pour la réalisation de divers projets.</p>",
+    "links": [
+      {
+        "label": "Site",
+        "url": "https://social.eko-iwe.com"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/Redx36/open_social"
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/projects/apn/home.PNG",
+        "caption": "Accueil"
+      },
+      {
+        "path": "assets/projects/apn/flux.PNG",
+        "caption": "Flux d'actualité"
+      }
+    ]
+  },
+  {
+    "name": "Cura'nat",
+    "thumbnail": "assets/projects/curanat.png",
+    "caption": "Wordpress, Woocommerce",
+    "url": "curanat",
+    "content": "<p>Site E-commerce de ventes de produits cosmétiques, Cura'Nat se positionne comme étant une marque de produits naturels et d’origine biologique fait mains au Bénin qui vous apporte satisfaction peu importe votre type de peau et de cheveux. la marque .</p>",
+    "links": [
+      {
+        "label": "Site",
+        "url": "https://curanat.ahimin.fr"
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/projects/curanat/home.PNG",
+        "caption": "Accueil"
+      },
+      {
+        "path": "assets/projects/curanat/shop.PNG",
+        "caption": "Boutique"
+      }
+    ]
+  },
+  {
+    "name": "Eko-iwe",
+    "thumbnail": "assets/projects/ekoiwe.png",
+    "caption": "Drupal, LMS, H5P",
+    "url": "ekoiwe",
+    "content": "<p>Eko-iwe vise à répandre des formations en IT mais aussi à long terme dans tous les domaines le permettant .</p>",
+    "links": [
+      {
+        "label": "Site",
+        "url": "https://eko-iwe.com"
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/projects/ekoiwe/front.PNG",
+        "caption": "Login"
+      },
+      {
+        "path": "assets/projects/ekoiwe/home.PNG",
+        "caption": "Accueil"
+      }
+    ]
+  },
+  {
+    "name": "Fleur de Lys",
+    "thumbnail": "assets/projects/fleurdelys.png",
+    "caption": "Wordpress, Woocommerce",
+    "url": "fleurdelys",
+    "content": "<p>Site E-commerce de vente de tissus et produits d’habillements.</p><p>Fleur de Lys vous propose chaque jours des produits inédis répondant à vos besoins et à toutes vos occasions. Pour homme, femme, enfants, toutes les gammes sont disponibles.</p>",
+    "links": [
+      {
+        "label": "Site",
+        "url": "https://fleur-de-lys.ahimin.fr"
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/projects/fleurdelys/home.PNG",
+        "caption": "Accueil"
+      }
+    ]
+  },
+  {
+    "name": "Okty",
+    "thumbnail": "assets/projects/okty.png",
+    "caption": "Docker, Angular",
+    "url": "okty",
+    "content": "<p>Okty est un projet open source permettant la création d'un environnement docker correspondant à chaqueprojet.</p><p>L'objectif premier de cette plateforme est d'offrir le plus de personnalisation possible aux développeurs afin de pouvoir se concentrer sur le développement et de ne pas perdre de temps à créer manuellement des images spécifiques pour chaque projet.</p><p>Okty offre une interface de configuration simple, intuitive et accessible à tous. <br>De nombreux containers sont disponibles (MySQL, PHP, Node, MongoDB, ...).</p>",
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/okty-io/okty"
+      },
+      {
+        "label": "Demo",
+        "url": "https://okty.io/"
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/projects/okty/okty_home.png",
+        "caption": "Page d'accueil de okty"
+      },
+      {
+        "path": "assets/projects/okty/okty_templates.png",
+        "caption": "Creation depuis un template"
+      },
+      {
+        "path": "assets/projects/okty/okty_containers.png",
+        "caption": "Liste des containers"
+      },
+      {
+        "path": "assets/projects/okty/okty_setup.png",
+        "caption": "Configuration container docker"
+      }
+    ]
+  }
+]

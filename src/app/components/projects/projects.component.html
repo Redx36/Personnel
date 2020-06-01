@@ -1,0 +1,26 @@
+<app-nav></app-nav>
+<div class="content">
+  <div class="header" [@fadeIn]="headerState">
+    <p>
+      Animé par cette passion du développement entre autre, plusieurs projets ont vu le jour sur mes temps libres.
+      Ces projets ont tous permis une mise en application de mes compétences, ma volonté et mon envie d'apprendre.
+    </p>
+  </div>
+
+  <div class="projects">
+    <app-card *ngFor="let project of projects; let i = index;"
+              [expanded]="expanded == project"
+              [blur]="expanded  && expanded !== project"
+              [project]="project"
+              [@fadeIn]="cardState[i]"
+    >
+      <div (click)="toggleProject(project)">
+        <div class="image-container">
+          <img [src]="project.thumbnail" [alt]="project.name">
+        </div>
+        <h3>{{ project.name }}</h3>
+        <p>{{ project.caption }}</p>
+      </div>
+    </app-card>
+  </div>
+</div>

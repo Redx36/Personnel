@@ -1,0 +1,89 @@
+<app-nav></app-nav>
+<div class="content" [perfectScrollbar]="config">
+  <div class="header" [@fadeIn]="headerState">
+    <p>
+      Hello ! Je m'appelle Jared  et je suis un jeune développeur web full-stack de {{ age }} ans passionné par la
+      programmation et les nouvelles technologies.
+      J'aime découvrir et apprendre de nouvelles choses au quotidien mais aussi passer du temps pour apporter des
+      solutions à des problèmes rencontrés. <br>
+      J'ai suivi un parcours ingénieur parsemé de différentes expériences en entreprises; lesquelles constitue un bagage de compétence
+      de par les thématiques abordées.
+    </p>
+  </div>
+
+  <mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">school</mat-icon>&nbsp;
+        Experiences Professionnelles
+      </ng-template>
+      <br>
+      <app-cv-item *ngFor="let item of experienceItems" [cvItem]="item"></app-cv-item>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">work</mat-icon>&nbsp;
+        Education
+      </ng-template>
+      <mat-card-title class="bloc_education_title">
+        <mat-icon>verified_user</mat-icon>
+        Formations
+      </mat-card-title>
+
+      <app-cv-item *ngFor="let item of educationItems" [cvItem]="item"></app-cv-item>
+
+      <mat-card-title class="bloc_education_title">
+        <mat-icon>verified_user</mat-icon>
+        Certifications
+      </mat-card-title>
+      <app-cv-item *ngFor="let item of certificationItems" [cvItem]="item"></app-cv-item>
+
+      <mat-card-title class="bloc_education_title">
+        <mat-icon>languages</mat-icon>
+        Langues
+      </mat-card-title>
+      <mat-card class="text-card">
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item *ngFor="let language of languageItems">
+              <h4 mat-line>{{language.title}}</h4>
+              <p mat-line>
+                <mat-progress-bar
+                  matTooltip="{{getLanguageLevelDescription(language.level)}}"
+                  matTooltipPosition="above"
+                  color="primary"
+                  mode="determinate"
+                  value="{{language.level}}">
+                </mat-progress-bar>
+              </p>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+      <br>
+
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">account_circle</mat-icon>&nbsp;
+        Centres d'intérêts
+      </ng-template>
+
+      <mat-card class="text-card" *ngIf="interests !== undefined && interests !== [] && interests.length > 0">
+        <mat-card-content>
+          <mat-chip-list selectable="false">
+            <mat-chip *ngFor="let item of interests">
+              <i class="tag-icon {{item.icon | lowercase}}" *ngIf="item.icon !== undefined && item.icon !== '' && item.icon.startsWith('icon-')"></i>
+              <mat-icon class="tag-icon" *ngIf="item.icon !== undefined && item.icon !== '' && ! item.icon.startsWith('icon-')">{{item.icon | lowercase}}</mat-icon>
+              {{item.title}}
+            </mat-chip>
+          </mat-chip-list>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+  </mat-tab-group>
+
+
+</div>

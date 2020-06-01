@@ -1,0 +1,20 @@
+<nav [@fadeIn]="true">
+  <span class="header-menu" *ngIf="windowWidth < 800">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <p><span><a routerLink='/resume'>Résumé</a></span></p>
+      <p><span><a routerLink='/projects'>Projects</a></span></p>
+      <p><span><a routerLink='/contact'>Contact</a></span></p>
+    </mat-menu>
+  </span>
+  <h1>Jared ALIDJINOU</h1>
+  <div class="links" *ngIf="windowWidth >= 800">
+    <p><span><a routerLink='/resume'>Résumé</a></span></p>
+    <p><span><a routerLink='/projects'>Projects</a></span></p>
+    <p><span><a routerLink='/contact'>Contact</a></span></p>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

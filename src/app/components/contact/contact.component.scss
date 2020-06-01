@@ -1,0 +1,46 @@
+.content {
+  margin-top: 4rem;
+}
+
+.web-profiles {
+  margin-top: 25px;
+}
+
+a.profile-link {
+  font-size: 1.2em;
+}
+
+.link-icon {
+  position: relative;
+  top: -0.1em;
+  margin-right: 0.2em;
+}
+.link-icon:before {
+  color: unset;
+}
+
+.header {
+  margin-top: 05vh;
+  > h1{
+    text-align: center;
+  }
+}
+img {
+  width: 25rem;
+}
+
+.mat-dialog-content .mat-form-field {
+  width: 40rem;
+}
+
+.send {
+  color: #ffffff;
+  background-color: #084c60;
+  width: 90%;
+  margin: 0px 0px 0px 10px;
+}
+
+.send:disabled{
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.12);
+}
